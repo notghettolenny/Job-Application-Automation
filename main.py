@@ -67,7 +67,7 @@ class EasyApplyLinkedin:
     def find_offers(self):
         """This function finds all the offers through all the pages result of the search and filter"""
 
-        # find the total amount of results (if the results are above 24-more than one page-, we will scroll trhough all available pages)
+        # find the total amount of results (if the results are above 24-more than one page-, it will scroll through all available pages)
         total_results = self.driver.find_element_by_class_name("display-flex.t-12.t-black--light.t-normal")
         total_results_int = int(total_results.text.split(' ',1)[0].replace(",",""))
         print(total_results_int)
@@ -129,7 +129,7 @@ class EasyApplyLinkedin:
             pass
         time.sleep(1)
 
-        # try to submit if submit application is available...
+        #Submit application if available...
         try:
             submit = self.driver.find_element_by_xpath("//button[@data-control-name='submit_unify']")
             submit.send_keys(Keys.RETURN)
